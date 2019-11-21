@@ -1,9 +1,30 @@
 // CodeSaitama
 
-// Paasing a function a callback...
-let x = function(a, b){return a * b}
-let sampleArr = [3, 7, 10, 14, 2, 5, 1, 9];
-console.log(sampleArr.map(x));
+// Function for getting the current date. Formatted...
+let getTodayDate = function(){
+	let date = new Date();
+	let day = date.getDate();
+	let month = date.getMonth() + 1;
+	let year = date.getFullYear();
+	day.toString().length > 1 ? day = day : day = '0' + day
 
-let date = new Date();
-console.log(date.toString())
+	return `${day}/${month}/${year}`;
+}
+
+// Keypress event to check for digits and dot input...
+
+document.querySelector('.numbers').addEventListener('keypress', (evt) => {
+	let evt_value = this.value;
+	evt_value = evt_value.replace(/[^\d].+/, "");
+	if((evt.which < 48 || evt.which > 57)){
+		evt.preventDefault();
+	}
+});
+
+
+function numberToMoney(value){
+	nf = new Int.NumberFormat(standard, 
+	{minimumFractionDigits: dec, maximumFractionDigits: 2});
+	return nf.format(Number(value) ? value : 0.00);
+
+}
