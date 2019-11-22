@@ -1,1 +1,3 @@
 # VimJS
+
+This is the source code for a Human Resource application being coined...
