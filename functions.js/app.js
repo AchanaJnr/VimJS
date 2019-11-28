@@ -11,3 +11,6 @@ function moneyFormat(value, standard, dec = 0) {
 
 let moneyNum = 254000
 console.log(moneyFormat(moneyNum, 'en', 2));
+
+// Code Generator...
+let codeGenerator = (str, len) => `${str}-${Math.random().toString(36).substr(2, len).toUpperCase()}`;
