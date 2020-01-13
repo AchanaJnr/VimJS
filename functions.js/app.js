@@ -10,9 +10,12 @@ function moneyFormat(value, standard, dec = 0) {
 };
 
 let moneyNum = 254000
-console.log(moneyFormat(moneyNum, 'en', 2));
+console.log(moneyFormat(moneyNum, 'en', 1));
 
-// Code Generator...
-let codeGenerator = (str, len) => `${str}-${Math.random().toString(36).substr(2, len).toUpperCase()}`;
+//let codeGenerator = (str, len) => `${str}-${Math.random().toString(36).substr(2, len).toUpperCase()}`;
 
 console.log(codeGenerator('GH', 5));
+
+function codeGenerator(str, len){
+    return `${str}-${Math.random().toString(36).substr(2, len).toUpperCase()}`
+}
