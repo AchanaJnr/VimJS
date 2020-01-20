@@ -18,7 +18,43 @@
     <label>Select Three</label>
     <select class="select-class" id="selectThree"> </select>
   </div>
+
+  <!-- <table border="3">
+    <thead>
+    <tr>Heading 1</tr>
+    <tr>Heading 2</tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td contenteditable='true' style='width: 50%'></td>
+    <td contenteditable='true'></td>
+    </tr>
+    <tr>
+    <td contenteditable='true'></td>
+    <td contenteditable='true'></td>
+    </tr>
+    </tbody>
+  </table> -->
+  <table border>
+    <tr>
+    <td ondblclick="edit(this)"><input value="cell1" disabled onblur="disable(this)"></td>
+    <td ondblclick="edit(this)"><input value="cell2" disabled onblur="disable(this)"></td>
+    <td ondblclick="edit(this)"><input value="cell3" disabled onblur="disable(this)"></td>
+    <td ondblclick="edit(this)"><input value="so forth..." disabled onblur="disable(this)">
+    </td>
+    </tr>
+    </table>
 </div>
+  <script>
+    function edit(el) {
+      el.childNodes[0].removeAttribute("disabled");
+      el.childNodes[0].focus();
+      window.getSelection().removeAllRanges();
+    }
+    function disable(el) {
+      el.setAttribute("disabled", "");
+    }
+  </script>
   <script src="./MovieData.js" type='module'></script>
   <script src="./app.js" type='module'></script>
   </body>
