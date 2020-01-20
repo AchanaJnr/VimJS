@@ -10,7 +10,7 @@ let data = {
 
 
 function encodeBuffer64(data){
-  let buff = new Buffer(data);
+  buff = new Buffer(data);
   return buff.toString('base64');
 }
 
@@ -21,11 +21,34 @@ function decodeBuffer64(data){
   return buff.toString('ascii')
 }
 
-console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------');
-console.log(encodeBuffer64(JSON.stringify(data)))
+//console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------');
+//console.log(encodeBuffer64(JSON.stringify(data)))
 
-console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------');
-let r_data = decodeBuffer64(encodeBuffer64(JSON.stringify(data)))
-console.log(r_data)
+//console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------');
+//let r_data = decodeBuffer64(encodeBuffer64(JSON.stringify(data)))
+//console.log(r_data)
 //console.log('"' + data + '" converted to Base64 is "' + encodeBuffer64(data) + '"');
 //console.log('"' + encodeBuffer64(data) + '" converted from Base64 to ASCII is "' + decodeBuffer64(encodeBuffer64(data)) + '"');
+
+function edit(el) {
+  el.childNodes[0].removeAttribute("disabled");
+  el.childNodes[0].focus();
+  window.getSelection().removeAllRanges();
+}
+function disable(el) {
+  el.setAttribute("disabled", "");
+}
+
+getLocation()
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  console.log("Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude);
+}
