@@ -46,13 +46,19 @@
     </table>
 </div>
   <script>
-    function edit(el) {
-      el.childNodes[0].removeAttribute("disabled");
-      el.childNodes[0].focus();
-      window.getSelection().removeAllRanges();
+    getLocation()
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
     }
-    function disable(el) {
-      el.setAttribute("disabled", "");
+    
+    console.log(navigator.geolocation.getCurrentPosition(showPosition))
+    function showPosition(position) {
+      console.log("Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude);
     }
   </script>
   <script src="./MovieData.js" type='module'></script>
