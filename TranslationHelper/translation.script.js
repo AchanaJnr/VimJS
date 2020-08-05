@@ -40,3 +40,51 @@ function reloadLanguagesTranslations(){
         
     });
 }
+
+//For getting the words using code and selected language
+let getTransByCode = (szCode) => {
+    if(szCode && szCode !== ''){
+        for (let i = 0; i < AllStrings.length; i++) {
+            if (AllStrings[i].code.trim().toLowerCase() === szCode.trim().toLowerCase())
+                return AllStrings[i][selectedLingo].trim();
+        }
+    }
+};
+
+//For translating words from english to selected language
+let getTransByString = (TheString) => {
+    let returnString = "";
+    //No need to loop through if it is in english...
+    if (selectedLingo === 'en') return TheString;
+
+    for (let i = 0; i < AllStrings.length; i++) {
+        if (AllStrings[i].en.trim().toLowerCase() === TheString.trim().toLowerCase()) {
+            if (selectedLingo === 'fr')
+                returnString = AllStrings[i].fr.trim() || "";
+            if (selectedLingo === 'es')
+                returnString = AllStrings[i].es.trim() || "";
+            if (selectedLingo === 'gr')
+                returnString = AllStrings[i].gr.trim() || "";
+            if (selectedLingo === 'pr')
+                returnString = AllStrings[i].pr.trim() || "";
+            break;
+        }
+    }
+
+    return returnString || TheString;
+};
+
+renderTranslations(); //run functions
+
+//translations
+$(".selectedLanguageAnc").text(`${selectedLingo.toLowerCase()}`);
+ 
+$('.languageList li').each(function (i, obj) {
+    if ($(this).hasClass(selectedLingo.toLowerCase())) {
+        $(this).addClass('active')
+        $(this).find('h6').css({'color' : '#FFF'});
+    }
+}).click(function () {
+    changeUserLanguage(this.className);
+});
+//End of translations
