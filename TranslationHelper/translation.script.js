@@ -10,3 +10,12 @@ let changeUserLanguage = (value) => {
 };
 
 let AllStrings = "", selectedLingo = localStorage.getItem("lingua") || getLanguageOfBrowser();
+
+
+let renderTranslations = () => {
+    $(AllStrings).each(function (key, val) {
+        $("." + val.code).not('td').text(val[`${selectedLingo}`]);
+    });
+};
+
+const langLocStorName = 'langHCMCustomerAdminLiteStrings';
