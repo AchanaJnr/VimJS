@@ -44,3 +44,16 @@ for (let i = 0; i < 10; i++) {
   
     alert(i); // 1, then 3, 5, 7, 9
 }
+
+
+for (let i = 0; i < 3; i++) {
+
+    for (let j = 0; j < 3; j++) {
+
+        let input = prompt(`Value at coords (${i},${j})`, '');
+
+        // what if we want to exit from here to Done (below)?
+    }
+}
+  
+alert('Done!');
