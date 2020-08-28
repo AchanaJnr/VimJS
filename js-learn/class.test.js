@@ -7,7 +7,7 @@ class School{
     }
 
     rateSchool(year){
-        return ((year >= 1900 && year <= 1949) ? '3' : (year >= 1950 && year <= 1999) ? '2' : (year >= 2000 && year <= new Date().getFullYear()) ? '1' : '0') + 'Star Rating';
+        return ((year >= 1900 && year <= 1949) ? '3' : (year >= 1950 && year <= 1999) ? '2' : (year >= 2000 && year <= new Date().getFullYear()) ? '1' : '0') + ' Star Rating';
     }
 
     get schoolDetails(){
@@ -15,3 +15,8 @@ class School{
     }
 
 }
+
+let sample = new School(1, 'Maedel\'s Grace School', 'Accra, Awoshie', 1980);
+console.log(sample.schoolDetails);
+console.log(sample.rateSchool(2001));
+console.log(`✨Test run✨`)
