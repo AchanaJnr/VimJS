@@ -10,4 +10,8 @@ class School{
         return ((year >= 1900 && year <= 1949) ? '3' : (year >= 1950 && year <= 1999) ? '2' : (year >= 2000 && year <= new Date().getFullYear()) ? '1' : '0') + 'Star Rating';
     }
 
+    get schoolDetails(){
+        return {id: this.id, name: this.name, location: this.location, year: this.year, rate: this.rateSchool(this.year)}
+    }
+
 }
