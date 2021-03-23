@@ -13,3 +13,8 @@ function generateUniqueID() {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
+
+/** Returns true if phone number is in the correct format. */
+function validatePhone(data) {
+    return (/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g).test(data)
+}
