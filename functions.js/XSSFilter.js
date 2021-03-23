@@ -14,3 +14,7 @@
         return toOutput
     }
 }
+
+function banzajs(string) {
+    return /<(.*)>/.test(string);
+};
