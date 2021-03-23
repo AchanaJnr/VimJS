@@ -19,4 +19,5 @@ class School{
 let sample = new School(1, 'Maedel\'s Grace School', 'Accra, Awoshie', 1980);
 console.log(sample.schoolDetails);
 console.log(sample.rateSchool(2001));
+
 console.log(`✨Test run✨`)
