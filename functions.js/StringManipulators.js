@@ -18,11 +18,3 @@ function generateUniqueID() {
 function validatePhone(data) {
     return (/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g).test(data)
 }
-
-$("#btnClear").click(function () {
-    if(postData === "Update"){
-        populateFields(updateData);
-    }else{
-        clearModal();
-    }
-});
