@@ -1,4 +1,6 @@
-console.log(navigator.geolocation.getCurrentPosition());
+console.log(navigator.geolocation.watchPosition(function(data){
+  console.log(data)
+}))
 
 console.log(navigator.geolocation.getCurrentPosition(showPosition));
 
@@ -6,5 +8,3 @@ console.log(navigator.geolocation.getCurrentPosition(showPosition));
       console.log("Latitude: " + position.coords.latitude +
       "<br>Longitude: " + position.coords.longitude);
     };
-    
-    console.log(true);
