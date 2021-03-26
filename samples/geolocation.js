@@ -1,7 +1,3 @@
-console.log(navigator.geolocation.watchPosition(function(data){
-  console.log(data)
-}))
-
 console.log(navigator.geolocation.getCurrentPosition(showPosition));
 
     function showPosition(position) {
