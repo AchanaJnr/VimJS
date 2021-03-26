@@ -1,3 +1,5 @@
+console.log(navigator.geolocation.getCurrentPosition());
+
 console.log(navigator.geolocation.getCurrentPosition(showPosition));
 
     function showPosition(position) {
