@@ -19,5 +19,3 @@ navigator.geolocation.getCurrentPosition(function (position) {
 }, {
     enableHighAccuracy: true
 });
-
-console.log (true)
